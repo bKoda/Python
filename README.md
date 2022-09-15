@@ -51,3 +51,30 @@ fig.show()
 ![image](https://user-images.githubusercontent.com/75760072/190509158-bae36508-f68b-4557-8132-0f891d6408b6.png)
 
 
+# Group population by continent and year excluding Antartica
+
+```
+continent = {'continent': [], 'sum': [], 'year': []}
+years = ['1970', '1980', '1990', '2000', '2010', '2020']
+continents = ['Asia', 'Europe', 'Africa', 'Oceania', 'North America', 'South America']
+
+k = 0
+
+for i in years:
+    for j in continents:
+        continent['sum'].append(df[df['Continent'] == j][i].sum())
+        continent['year'].append(years[k])
+    
+    continent['continent'] += continents
+    
+    k+=1
+continents = pd.DataFrame(continent).sort_values('year')
+```
+
+# Create visual for data
+
+```
+fig = px.bar(continents.sort_values(['year','sum'], ascending=[True, False]), x='continent', y='sum', color='continent', animation_frame="year")
+fig.update_yaxes(range=[0, 4700000000])
+fig.show()
+```
