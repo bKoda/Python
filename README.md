@@ -78,3 +78,4 @@ fig = px.bar(continents.sort_values(['year','sum'], ascending=[True, False]), x=
 fig.update_yaxes(range=[0, 4700000000])
 fig.show()
 ```
+![image](https://user-images.githubusercontent.com/75760072/190512713-6ea50b4d-3782-452f-9cb9-87d082c55fba.png)
