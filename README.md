@@ -1,4 +1,4 @@
-# The purpose of this project was to determine the largest population size per Country as of 2020
+# The purpose of this project was to determine the largest population size per Country and Continent as of 2020
 
 # Import libaries
 ```
@@ -31,6 +31,7 @@ for col in df.columns:
         df = df.rename(columns={col: col.split(' ')[0]})   
 df.head()
 ```
+
 # Filter top 7 countries by population as of 2020
 
 ```
@@ -38,6 +39,8 @@ top7 = df.sort_values('2022', ascending=False).head(7)
 top7 = top7.melt(id_vars=['Country'], value_vars=['2020', '2010', '2000', '1990', '1980', '1970'], var_name='Year', value_name='Population')
 top7.head()
 ```
+![image](https://user-images.githubusercontent.com/75760072/190509284-e1adaa2c-be6f-4c51-81fb-c406526b3b40.png)
+
 # Create line graph to visualize data
 
 ```
@@ -46,3 +49,5 @@ fig['layout']['xaxis']['autorange'] = "reversed"
 fig.show()
 ```
 ![image](https://user-images.githubusercontent.com/75760072/190509158-bae36508-f68b-4557-8132-0f891d6408b6.png)
+
+
