@@ -1,6 +1,6 @@
 # The purpose of this project was to determine the largest population size per Country as of 2020
 
-##Import libaries
+###Import libaries
 ```
 ##Import libaries
 
@@ -17,9 +17,8 @@ import plotly.express as px
 from plotly.offline import iplot, init_notebook_mode
 init_notebook_mode(connected=True)
 ```
-
-```
 ###Import Dataset
+```
 df= pd.read_csv("world_population.csv", header=0)
 ```
 
